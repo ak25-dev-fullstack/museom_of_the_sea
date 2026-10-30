@@ -11,6 +11,11 @@ coverage
 .env.*
 !.env.example
 
+# Tool caches
+*.tsbuildinfo
+.eslintcache
+*.local
+
 # Logs
 *.log
 npm-debug.log*
@@ -19,7 +24,9 @@ npm-debug.log*
 .vscode/*
 !.vscode/extensions.json
 .idea
+*.swp
 .DS_Store
+Thumbs.db
 
 # Old Vite template files (safe to delete)
 _template-backup
