@@ -1,0 +1,189 @@
+/* Intro text and buttons, layered over the StormScene. */
+.intro {
+  --intro-text: #eef3f4;
+  --intro-muted: #b9cbd2;
+  --intro-accent: #7fd0d8;
+
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--intro-text);
+}
+
+.intro__gate,
+.intro__content {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-2) 22vh;
+  text-align: center;
+}
+
+.intro__gate {
+  background: rgba(2, 8, 14, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.intro__hint {
+  margin: 0;
+  color: var(--intro-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.intro__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 8vw, 5.5rem);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 24px rgba(127, 208, 216, 0.45),
+    0 4px 16px rgba(0, 0, 0, 0.8);
+  animation: intro-title-in 2.4s ease-out both;
+}
+
+.intro__tagline {
+  margin: 0;
+  max-width: 34rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.2vw, 1.6rem);
+  color: var(--intro-muted);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  animation: intro-fade-up 1.8s ease-out both;
+}
+
+.intro__choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.intro__button {
+  min-width: 12rem;
+  padding: 0.9rem 1.8rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--intro-text);
+  background: rgba(10, 30, 42, 0.6);
+  border: 1px solid rgba(127, 208, 216, 0.6);
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(127, 208, 216, 0.2);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.intro__choices .intro__button {
+  animation: intro-pop 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+}
+.intro__choices .intro__button:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.intro__button:hover {
+  background: rgba(20, 60, 74, 0.8);
+  box-shadow: 0 0 28px rgba(127, 208, 216, 0.45);
+  transform: translateY(-2px);
+}
+
+.intro__button:focus-visible,
+.intro__control:focus-visible {
+  outline: 2px solid var(--intro-accent);
+  outline-offset: 3px;
+}
+
+.intro__controls {
+  position: fixed;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  gap: var(--space-1);
+}
+
+.intro__control {
+  padding: 0.4rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--intro-muted);
+  background: rgba(2, 8, 14, 0.5);
+  border: 1px solid rgba(185, 203, 210, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.intro__control:hover {
+  color: var(--intro-text);
+}
+
+@media (max-width: 480px) {
+  .intro__choices {
+    flex-direction: column;
+    width: 100%;
+    max-width: 18rem;
+  }
+}
+
+@keyframes intro-title-in {
+  from {
+    opacity: 0;
+    letter-spacing: 0.3em;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.08em;
+    filter: blur(0);
+  }
+}
+
+@keyframes intro-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes intro-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro__title,
+  .intro__tagline,
+  .intro__choices .intro__button {
+    animation: intro-fade 0.8s ease-out both;
+  }
+
+  @keyframes intro-fade {
+    from {
+      opacity: 0;
+    }
+  }
+}

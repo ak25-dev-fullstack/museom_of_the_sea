@@ -92,8 +92,11 @@ Every error response has the same shape:
 ├── client/                  React frontend
 │   └── src/
 │       ├── api/             typed API client (the only place that calls fetch)
-│       ├── components/      reusable UI components
-│       ├── pages/           top-level screens
+│       ├── assets/          media bundled by Vite (e.g. intro storm video)
+│       ├── audio/           generated sound effects (Web Audio storm and thunder)
+│       ├── components/      reusable UI components (e.g. StormScene background)
+│       ├── content/         UI wording that may change (e.g. intro text)
+│       ├── pages/           top-level screens (IntroPage, AuthPage)
 │       ├── state/           client-side state (context/reducer)
 │       ├── styles/          global styles and design tokens
 │       └── test/            test setup

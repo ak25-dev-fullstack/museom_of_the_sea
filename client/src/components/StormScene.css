@@ -1,0 +1,256 @@
+/*
+ * Stormy sea background. Palette taken from the team's mood board:
+ * slate-grey sky, steel-teal waves, white foam, deep navy shadows.
+ */
+.storm {
+  --storm-sky-top: #5d6a72;
+  --storm-sky-mid: #2c3c47;
+  --storm-sky-low: #0d1b25;
+  --storm-glow: rgba(170, 215, 222, 0.22);
+  --storm-mist: rgba(190, 210, 218, 0.28);
+  --storm-wave-back: #4a6874;
+  --storm-wave-mid: #274654;
+  --storm-wave-front: #0e2330;
+  --storm-foam: rgba(235, 244, 247, 0.8);
+  --storm-ship: #05101a;
+
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--storm-sky-low);
+}
+
+.storm > * {
+  position: absolute;
+  inset: 0;
+}
+
+.storm__sky {
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 35%, var(--storm-glow), transparent 70%),
+    linear-gradient(to bottom, var(--storm-sky-top), var(--storm-sky-mid) 45%, var(--storm-sky-low));
+}
+
+/* Clouds: soft overlapping blobs that drift slowly across the sky. */
+.storm__clouds {
+  inset: -10% -50% 40% -50%;
+  filter: blur(18px);
+  animation: storm-drift 60s linear infinite alternate;
+}
+
+.storm__clouds--far {
+  opacity: 0.6;
+  background:
+    radial-gradient(ellipse 18% 22% at 15% 30%, #55636d, transparent 70%),
+    radial-gradient(ellipse 22% 18% at 40% 18%, #4a5862, transparent 70%),
+    radial-gradient(ellipse 20% 25% at 65% 32%, #56646e, transparent 70%),
+    radial-gradient(ellipse 25% 20% at 88% 20%, #4b5963, transparent 70%);
+}
+
+.storm__clouds--near {
+  opacity: 0.75;
+  animation-duration: 40s;
+  animation-direction: alternate-reverse;
+  background:
+    radial-gradient(ellipse 25% 20% at 25% 10%, #26343e, transparent 70%),
+    radial-gradient(ellipse 30% 22% at 55% 5%, #222f38, transparent 70%),
+    radial-gradient(ellipse 24% 18% at 80% 12%, #28363f, transparent 70%);
+}
+
+/* ---------- Video (fades in over the drawn storm once loaded) ---------- */
+.storm__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keep Poseidon (right of centre) in view when narrow screens crop the sides. */
+  object-position: 70% center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+
+.storm__video--ready {
+  opacity: 1;
+}
+
+/* ---------- Lightning strike (re-mounted for every strike) ---------- */
+.storm__strike {
+  pointer-events: none;
+}
+
+.storm__flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, #eef6ff, #9fb8c8 60%, #5a7180);
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: storm-flash 1.1s ease-out forwards;
+}
+
+.storm__bolt {
+  position: absolute;
+  top: 0;
+  width: clamp(40px, 6vw, 80px);
+  height: 55%;
+  fill: none;
+  stroke: #f4fbff;
+  stroke-width: 3;
+  stroke-linejoin: bevel;
+  filter: drop-shadow(0 0 6px #cfe9ff) drop-shadow(0 0 18px #7fb6e0);
+  opacity: 0;
+  animation: storm-flash 0.9s ease-out forwards;
+}
+
+/* Sea spray and mist hanging over the horizon. */
+.storm__mist {
+  inset: 35% -20% 20% -20%;
+  background: linear-gradient(to bottom, transparent, var(--storm-mist) 55%, transparent);
+  filter: blur(12px);
+  animation: storm-drift 30s ease-in-out infinite alternate-reverse;
+}
+
+/* ---------- Sea ---------- */
+.storm__sea {
+  inset: auto 0 0 0;
+  height: 50%;
+}
+
+.storm__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* Never narrower than 2400px, so waves keep their shape on phones. */
+  width: max(200%, 2400px);
+  animation: storm-roll linear infinite;
+}
+
+.storm__wave path {
+  stroke: var(--storm-foam);
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.storm__wave--back {
+  height: 100%;
+  animation-duration: 26s;
+}
+.storm__wave--back path {
+  fill: var(--storm-wave-back);
+  stroke-opacity: 0.4;
+}
+
+.storm__wave--mid {
+  height: 85%;
+  animation-duration: 17s;
+}
+.storm__wave--mid path {
+  fill: var(--storm-wave-mid);
+}
+
+.storm__wave--front {
+  height: 60%;
+  animation-duration: 11s;
+}
+.storm__wave--front path {
+  fill: var(--storm-wave-front);
+}
+
+.storm__ship {
+  position: absolute;
+  left: 58%;
+  bottom: 38%;
+  width: clamp(60px, 9vw, 120px);
+  fill: var(--storm-ship);
+  transform-origin: 50% 80%;
+  animation: storm-toss 4.5s ease-in-out infinite;
+}
+
+.storm__ship-mast {
+  fill: none;
+  stroke: var(--storm-ship);
+  stroke-width: 3;
+}
+
+.storm__ship-sail {
+  fill: #2a3a44;
+}
+
+.storm__vignette {
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(2, 8, 14, 0.75));
+  pointer-events: none;
+}
+
+/* Calm variant: dimmer, so forms on top stay readable. */
+.storm--calm .storm__vignette {
+  background: radial-gradient(ellipse at center, rgba(2, 8, 14, 0.35), rgba(2, 8, 14, 0.85));
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes storm-roll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes storm-drift {
+  to {
+    transform: translateX(12%);
+  }
+}
+
+@keyframes storm-toss {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-14%) rotate(7deg);
+  }
+}
+
+/* A double flicker like real lightning. Kept under 3 flashes per second. */
+@keyframes storm-flash {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 0.85;
+  }
+  12% {
+    opacity: 0.1;
+  }
+  22% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: no rolling, no flicker. Lightning becomes a gentle glow. */
+@media (prefers-reduced-motion: reduce) {
+  .storm__clouds,
+  .storm__mist,
+  .storm__wave,
+  .storm__ship {
+    animation: none;
+  }
+
+  .storm__flash {
+    animation: storm-glow 2.5s ease-in-out forwards;
+  }
+
+  .storm__bolt {
+    display: none;
+  }
+
+  @keyframes storm-glow {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.25;
+    }
+  }
+}

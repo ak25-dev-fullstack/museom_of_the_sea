@@ -1,41 +1,49 @@
 import { render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it } from 'vitest';
 import App from './App';
 
-afterEach(() => {
-  vi.unstubAllGlobals();
-});
+/** Enters the intro and skips straight to the New user / Existing user buttons. */
+async function skipIntro(user: ReturnType<typeof userEvent.setup>) {
+  await user.click(screen.getByRole('button', { name: 'Enter the storm' }));
+  await user.click(screen.getByRole('button', { name: 'Skip intro' }));
+}
 
 describe('App', () => {
-  it('shows the museum title', () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(() => new Promise(() => {})),
-    );
+  it('starts on the intro gate', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { name: 'Museum of the Sea' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Enter the storm' })).toBeInTheDocument();
   });
 
-  it('shows the server as online when the health check succeeds', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(async () => new Response(JSON.stringify({ status: 'ok', uptime: 1 }))),
-    );
+  it('opens the sign-up form for a new user', async () => {
+    const user = userEvent.setup();
     render(<App />);
+    await skipIntro(user);
 
-    expect(await screen.findByText('Server: online')).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'New user' }));
+
+    expect(screen.getByRole('heading', { name: 'Create your visitor pass' })).toBeInTheDocument();
   });
 
-  it('shows the server as offline when the request fails', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(async () => {
-        throw new TypeError('Failed to fetch');
-      }),
-    );
+  it('opens the log-in form for an existing user', async () => {
+    const user = userEvent.setup();
     render(<App />);
+    await skipIntro(user);
 
-    expect(await screen.findByText('Server: offline')).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Existing user' }));
+
+    expect(screen.getByRole('heading', { name: 'Welcome back, traveller' })).toBeInTheDocument();
+  });
+
+  it('goes back from the login page to the intro buttons', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await skipIntro(user);
+    await user.click(screen.getByRole('button', { name: 'Existing user' }));
+
+    await user.click(screen.getByRole('button', { name: /back to the intro/i }));
+
+    expect(screen.getByRole('button', { name: 'New user' })).toBeInTheDocument();
   });
 });

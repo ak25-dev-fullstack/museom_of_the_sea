@@ -1,31 +1,33 @@
 /**
  * @module App
  *
- * Root component. For now it is a placeholder shell that proves the
- * client ↔ server connection works. The real screens (gallery map, dialogue,
- * trial, endings) will live in `pages/` and `components/`.
+ * Root component. Chooses which screen to show: the storm intro first, then
+ * the login / sign-up page. The real screens (gallery map, dialogue, trial,
+ * endings) will be added to `pages/` and `components/`.
  */
-import { useEffect, useState } from 'react';
-import { getHealth } from './api/client';
+import { useState } from 'react';
+import { AuthPage, type AuthMode } from './pages/AuthPage';
+import { IntroPage } from './pages/IntroPage';
 
-type ServerStatus = 'checking' | 'online' | 'offline';
+type Screen = { name: 'intro'; skipToChoices: boolean } | { name: 'auth'; mode: AuthMode };
 
 export default function App() {
-  const [status, setStatus] = useState<ServerStatus>('checking');
+  const [screen, setScreen] = useState<Screen>({ name: 'intro', skipToChoices: false });
 
-  useEffect(() => {
-    getHealth()
-      .then(() => setStatus('online'))
-      .catch(() => setStatus('offline'));
-  }, []);
+  if (screen.name === 'auth') {
+    return (
+      <AuthPage
+        initialMode={screen.mode}
+        onBack={() => setScreen({ name: 'intro', skipToChoices: true })}
+      />
+    );
+  }
 
   return (
-    <main className="shell">
-      <h1>Museum of the Sea</h1>
-      <p className="tagline">An interactive conversation with history.</p>
-      <p className="status" role="status" data-status={status}>
-        Server: {status}
-      </p>
-    </main>
+    <IntroPage
+      skipToChoices={screen.skipToChoices}
+      onNewUser={() => setScreen({ name: 'auth', mode: 'register' })}
+      onExistingUser={() => setScreen({ name: 'auth', mode: 'login' })}
+    />
   );
 }
