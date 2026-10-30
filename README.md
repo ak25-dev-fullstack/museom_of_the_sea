@@ -1,5 +1,53 @@
 # Museum of the Sea
 
+> ## 👀 Teammates: preview the storm intro on your computer
+>
+> This branch (`aliya-idea-gen`) adds the opening intro (stormy sea video, Poseidon
+> rising, thunder) and the login page. It is **not merged into `main`** yet. To try it:
+>
+> **1. Check you have Node.js 22 or newer** (run `node -v`). If not, install the LTS
+> version from https://nodejs.org.
+>
+> **2. Get the branch.**
+>
+> If you have **not** cloned the repo yet:
+>
+> ```bash
+> git clone https://github.com/ak25-dev-fullstack/museom_of_the_sea.git
+> cd museom_of_the_sea
+> git switch aliya-idea-gen
+> ```
+>
+> If you **already** have the repo (commit or stash your own changes first):
+>
+> ```bash
+> cd museom_of_the_sea
+> git fetch origin
+> git switch aliya-idea-gen
+> git pull
+> ```
+>
+> **3. Install and start** (from the repo root):
+>
+> ```bash
+> npm install
+> cp server/.env.example server/.env   # first time only
+> npm run dev
+> ```
+>
+> If `npm install` crashes with `Cannot read properties of null (reading 'edgesOut')`,
+> run `npx npm@latest install` instead.
+>
+> **4. Open http://localhost:5173** in Chrome, Edge, Firefox or Safari.
+> **Turn your sound on**, then click **Enter the storm**. Try **Skip intro**, both
+> **New user** and **Existing user**, and resize the window to phone size.
+> Stop the app with `Ctrl + C` in the terminal.
+>
+> **5. Go back to your own work** with `git switch main` (or your own branch).
+>
+> Feedback is welcome: leave a comment on the pull request or message Aliya.
+> The login form is front end only for now (nothing is saved).
+
 An interactive conversational web app. You are a visitor to the Museum of the Sea, and your
 guide leads you through galleries about the ancient Greeks and the sea. You talk to them
 through branching dialogue, and your choices change their mood, what you learn, which galleries
@@ -33,8 +81,8 @@ dialogue engine, with no generative AI at the core.
 ### Install
 
 ```bash
-git clone <repo-url>
-cd museum-of-the-sea
+git clone https://github.com/ak25-dev-fullstack/museom_of_the_sea.git
+cd museom_of_the_sea
 npm install
 cp server/.env.example server/.env
 ```
@@ -52,7 +100,7 @@ This starts both apps:
 - Client: http://localhost:5173
 - API: http://localhost:3001 (the client reaches it through the Vite proxy at `/api`)
 
-The home page shows **"Server: online"** when the two are connected.
+The site opens on the storm intro, followed by the login page (front end only for now).
 
 ## Scripts
 
