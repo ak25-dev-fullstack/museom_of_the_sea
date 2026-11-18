@@ -150,8 +150,12 @@ Branches: `feat/<issue#>-short-name`; merge to `main` only through a PR with one
 
 ## Claude Code setup
 
-- `.claude/settings.json` (shared) pre-approves `npm test`, `npm run …`, `npx vitest` and
-  `npx tsc`, and denies reading `.env` files. Personal overrides go in
+- `.claude/settings.json` (shared) pre-approves `npm test` and `npm run …`, and denies reading
+  `.env` files.
+- **Never add, install, update or remove dependencies.** Installing packages (`npm install`,
+  `npx`, `yarn`, `pnpm`, `pip`, `brew`…) is blocked, and editing a `package.json` asks the user
+  first. If you think a new package is needed, stop and explain why; the user decides and
+  installs it. Use the existing `npm run` scripts instead of `npx`. Personal overrides go in
   `.claude/settings.local.json` (git-ignored).
 - Hooks run on every Edit/Write: `.claude/hooks/protect-files.mjs` blocks hand edits to
   `*.generated.*` files and `.env`; `.claude/hooks/format-and-lint.mjs` runs Prettier and
