@@ -110,6 +110,10 @@ Every error response has the same shape:
 │   │   └── services/        session store
 │   └── tests/               api/, engine/ and content/ tests
 ├── shared/                  TypeScript types shared by client and server
+├── docs/
+│   ├── rooms/<room>/        each room's plan, spec and research
+│   └── AI_USE_LOG.md        record of AI-assisted work (the brief requires it)
+├── .claude/                 shared Claude Code settings and hooks
 ├── .github/                 CI workflow, PR and issue templates
 ├── CLAUDE.md                project context for Claude Code
 └── README.md
@@ -124,7 +128,15 @@ Every error response has the same shape:
 5. Get one approving review from a teammate. CI must pass before merging.
 
 Write JSDoc/TSDoc comments for significant functions, components and modules. Add tests with
-every feature.
+every feature. If AI helped produce something you commit, add a row to `docs/AI_USE_LOG.md`.
+
+### Using Claude Code
+
+The repo includes shared Claude Code settings in `.claude/settings.json`. Test, lint and
+type-check commands run without prompts, and after every edit Claude Code formats and lints
+the changed file automatically (`.claude/hooks/`). Run `npm install` first so the hooks can
+find Prettier and ESLint. Put personal settings in `.claude/settings.local.json`, which is
+git-ignored.
 
 ## Team
 

@@ -11,6 +11,12 @@ coverage
 .env.*
 !.env.example
 
+# Claude Code: personal settings stay local; the shared settings.json is committed
+.claude/settings.local.json
+
+# Private copies of the university brief and rubric (not ours to publish)
+docs/_private/
+
 # Logs
 *.log
 npm-debug.log*

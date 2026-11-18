@@ -17,6 +17,43 @@ export default tseslint.config(
     languageOptions: { globals: globals.node },
   },
 
+  // Claude Code hook scripts: plain Node.js
+  {
+    files: ['.claude/**/*.mjs'],
+    languageOptions: { globals: globals.node },
+  },
+
+  // The conversation engine must stay pure (see CLAUDE.md): no Express, no I/O,
+  // and no imports from the outer layers that wrap it.
+  {
+    files: ['server/src/engine/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'express',
+              message: 'The engine must not depend on Express. Keep HTTP code in routes/.',
+            },
+            ...['fs', 'node:fs', 'fs/promises', 'node:fs/promises', 'http', 'node:http'].map(
+              (name) => ({
+                name,
+                message: 'The engine must stay pure (no I/O). Pass data in as arguments.',
+              }),
+            ),
+          ],
+          patterns: [
+            {
+              group: ['**/routes/**', '**/middleware/**', '**/services/**'],
+              message: 'The engine must not import from the layers that call it.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+
   // Client: browser + React
   {
     files: ['client/**/*.{ts,tsx}'],
