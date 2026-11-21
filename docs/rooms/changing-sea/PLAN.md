@@ -12,16 +12,16 @@ the team has 5–8 December to fit the other rooms in before the feature freeze.
 
 ## Phases
 
-| Phase                        | Dates          | Output                                                          | Gate before moving on                               |
-| ---------------------------- | -------------- | --------------------------------------------------------------- | --------------------------------------------------- |
-| 0. Set up                    | 18–19 Nov      | Claude Code settings and hooks, room docs, research in the repo | Claude Code runs `npm test` green on your machine   |
-| 1. Design the conversations  | 19–21 Nov      | `CONVERSATION_SPEC.md`, example conversations, decision log     | You have read and signed off the spec               |
-| 2. Set up verification       | 22 Nov         | Example-conversation test runner, feature map, terminal chat    | All example conversations exist as tests and fail   |
-| 3. Data pipeline             | 23–24 Nov      | Import script, schemas, generated room data                     | Content checks pass; 10 events spot-checked by hand |
-| 4. Engine, one slice at once | 25–29 Nov      | Five small pull requests (see below)                            | Each slice's example conversations pass             |
-| 5. Express API               | 30 Nov – 1 Dec | Routes, services, in-memory sessions, validation, API docs      | A scripted chat over HTTP matches the examples      |
-| 6. Harden and review         | 2–3 Dec        | Robustness and security fixes                                   | All checks green; JSDoc complete                    |
-| 7. Hand over                 | 4 Dec          | README, report material, walkthrough                            | You can explain every folder                        |
+| Phase                        | Dates          | Output                                                          | Gate before moving on                                      |
+| ---------------------------- | -------------- | --------------------------------------------------------------- | ---------------------------------------------------------- |
+| 0. Set up                    | 18–19 Nov      | Claude Code settings and hooks, room docs, research in the repo | Claude Code runs `npm test` green on your machine          |
+| 1. Design the conversations  | 19–21 Nov      | `CONVERSATION_SPEC.md`, example conversations, decision log     | You have read and signed off the spec                      |
+| 2. Set up verification       | 22 Nov         | Example-conversation test runner, feature map, terminal chat    | All examples exist as tests and fail under `test:examples` |
+| 3. Data pipeline             | 23–24 Nov      | Import script, schemas, generated room data                     | Content checks pass; 10 events spot-checked by hand        |
+| 4. Engine, one slice at once | 25–29 Nov      | Five small pull requests (see below)                            | Each slice's example conversations pass                    |
+| 5. Express API               | 30 Nov – 1 Dec | Routes, services, in-memory sessions, validation, API docs      | A scripted chat over HTTP matches the examples             |
+| 6. Harden and review         | 2–3 Dec        | Robustness and security fixes                                   | All checks green; JSDoc complete                           |
+| 7. Hand over                 | 4 Dec          | README, report material, walkthrough                            | You can explain every folder                               |
 
 Engine slices for Phase 4, one pull request each:
 
@@ -46,6 +46,38 @@ checks → review in a fresh subagent → clean up → pull request.
 - [ ] Private copies of the brief and rubric in `docs/_private/` (not committed)
 - [ ] On your machine: `npm install`, open Claude Code in the repo, confirm it runs `npm test`
       without asking and that the hooks fire after an edit
+
+## Phase 1 checklist
+
+- [x] Design interview: every row of "To settle in Phase 1" decided (see `DECISIONS.md`, D1–D21)
+- [x] `CONVERSATION_SPEC.md`: turns, state, input kinds, matching, exhibits, mood, quiz, endings, API
+- [x] `examples/`: 15 example conversations with machine-readable expectations
+- [x] `DECISIONS.md`: one entry per decision, for the report
+- [ ] **Gate:** spec read and signed off (you)
+
+## Phase 2 checklist
+
+- [x] Example runner in `server/tests/examples/`: reads every `examples/*.md` JSON block, runs each
+      scenario through the Express app with Supertest, and checks every `expect` key
+- [x] Runner self-tests (`runner.test.ts`) pass, so failures mean missing behaviour, not a broken runner
+- [x] `npm test` and CI run only the ids in `server/tests/examples/enabled.ts` (starts empty);
+      `npm run test:examples` runs all of them
+- [x] Examples 16 (one-match list), 17 (list during a quiz), 18 (AI fallback with a stub);
+      facts copied from `events.csv` by script
+- [x] `FEATURE_MAP.md`: each spec feature and the examples that cover it, with gaps
+- [x] `npm run chat`: a small terminal chat against a running server
+- [x] **Gate:** all examples exist as tests and fail under `test:examples` (27 of 27 fail at
+      `POST /api/sessions` → 404, 22 Nov 2026), while `npm test`, lint, typecheck and
+      format:check are green
+
+**Who owns the test harness.** The Phase 4 engine slices test the engine directly with plain state
+objects. The example runner runs end to end through the API from Phase 5, so
+`server/src/testing/harness.ts` (`createTestHarness`, see `examples/README.md`) is a **Phase 5
+deliverable**. Until then the runner falls back to `createApp()` and a clear "harness not built
+yet" error.
+
+**Note for the AI-fallback slice:** include a unit test that the service's **default** timeout is
+**5000 ms** (spec §17). Example 18 passes `timeoutMs: 50` only to keep its slow-stub case fast.
 
 ## Design proposal to take into Phase 1
 

@@ -23,7 +23,10 @@ Content must be historically grounded and label **myth** and **historical fact**
 
 - **No LLM or generative AI for the core conversation.** Dialogue comes from our JSON content
   plus our own engine. AI may only be an optional extra, and any AI call must go through
-  Express, **never from the frontend**, with keys in env vars only.
+  Express, **never from the frontend**, with keys in env vars only. The module leader approved it
+  (decision D21 in `docs/rooms/changing-sea/DECISIONS.md`): off by default (`AI_ENABLED`), used
+  only as a fallback when the engine returns `noMatch`, in a service outside the engine, labelled
+  "AI, unverified". There is no separate `/ask` route.
 - The backend must do real work (state, logic, validation). It must not be a static file server.
 - User choices must genuinely change the conversation (branching, state, consequences, unlocks).
 - Responsive UI for mobile and desktop.
@@ -86,7 +89,6 @@ React UI ──fetch──▶ Express API ──▶ in-memory session store
 | POST   | `/api/sessions/:id/galleries/:galleryId/enter` | 403 if locked                                        |
 | POST   | `/api/sessions/:id/choices` `{ choiceId }`     | 400 for bad input, 409 if the choice isn't available |
 | POST   | `/api/sessions/:id/trial/answers`              | final quiz                                           |
-| POST   | `/api/sessions/:id/ask`                        | _optional_ AI extra, off by default, backend only    |
 
 ### Dialogue content schema (agreed shape; implement with Zod in `server/src/content/`)
 
@@ -146,7 +148,6 @@ Branches: `feat/<issue#>-short-name`; merge to `main` only through a PR with one
   wording easy to swap; don't hard-code "Poseidon" outside content files.
 - How the room designs fit the gallery mechanics above (unlocks, favour, the trial). Each room
   settles this in its own spec under `docs/rooms/<room>/`.
-- Whether to build the optional AI extra at all.
 
 ## Claude Code setup
 
