@@ -29,3 +29,6 @@ npm-debug.log*
 
 # Old Vite template files (safe to delete)
 _template-backup
+
+# Python bytecode (example generator tools)
+__pycache__/

@@ -17,6 +17,8 @@
     "build": "npm run build -w client",
     "start": "npm run start -w server",
     "test": "npm run test -w server && npm run test -w client",
+    "test:examples": "npm run test:examples -w server",
+    "chat": "npm run chat -w server",
     "typecheck": "tsc -p shared --noEmit && tsc -p server --noEmit && tsc -p client --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

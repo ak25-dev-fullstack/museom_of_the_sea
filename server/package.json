@@ -9,7 +9,9 @@
     "start": "tsx src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:examples": "vitest run --config vitest.examples.config.ts",
+    "chat": "tsx scripts/chat.ts"
   },
   "dependencies": {
     "cors": "^2.8.6",
