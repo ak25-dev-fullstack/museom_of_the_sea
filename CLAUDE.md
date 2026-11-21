@@ -9,8 +9,12 @@ Bournemouth University, Level 5 Software Engineering group coursework (team of f
 Deadline: **15 December 2026, 12:00 midday**. Marked on the app and source code, a 6-minute
 demo video, a 12-page group report, and the GitHub history.
 
+Repo: https://github.com/ak25-dev-fullstack/museom_of_the_sea
+
 **Concept:** the user is a visitor to the Museum of the Sea. A guide/curator (currently
-Poseidon; see open decisions) leads them through galleries about the ancient Greeks and the sea.
+Poseidon; see open decisions) leads them through four rooms (final, decided 18 Nov 2026):
+**the changing sea**, **mythological creatures**, **sea life**, and **the gods and their
+relationship with Poseidon**.
 The user talks to the guide through branching dialogue. Their choices change the guide's favour,
 what they learn, which galleries unlock, a final quiz ("the trial"), and which ending they reach.
 Content must be historically grounded and label **myth** and **historical fact** separately.
@@ -19,7 +23,10 @@ Content must be historically grounded and label **myth** and **historical fact**
 
 - **No LLM or generative AI for the core conversation.** Dialogue comes from our JSON content
   plus our own engine. AI may only be an optional extra, and any AI call must go through
-  Express, **never from the frontend**, with keys in env vars only.
+  Express, **never from the frontend**, with keys in env vars only. The module leader approved it
+  (decision D21 in `docs/rooms/changing-sea/DECISIONS.md`): off by default (`AI_ENABLED`), used
+  only as a fallback when the engine returns `noMatch`, in a service outside the engine, labelled
+  "AI, unverified". There is no separate `/ask` route.
 - The backend must do real work (state, logic, validation). It must not be a static file server.
 - User choices must genuinely change the conversation (branching, state, consequences, unlocks).
 - Responsive UI for mobile and desktop.
@@ -66,7 +73,8 @@ React UI ──fetch──▶ Express API ──▶ in-memory session store
   `{ error: { code, message, details? } }` (the `ApiErrorBody` type in `shared`).
 - Validate input with `validate({ body, params })` from `server/src/middleware/validate.ts`.
 - The engine must stay pure: `(state, input) → newState`. No I/O and no Express, so it is easy
-  to unit-test.
+  to unit-test. ESLint enforces this: files in `server/src/engine/` can't import Express,
+  `fs`/`http`, or routes, middleware and services.
 - `shared/` holds **only** API request/response types. Content types belong to the server.
 - The client talks to the API **only** through `client/src/api/client.ts`.
 
@@ -81,7 +89,6 @@ React UI ──fetch──▶ Express API ──▶ in-memory session store
 | POST   | `/api/sessions/:id/galleries/:galleryId/enter` | 403 if locked                                        |
 | POST   | `/api/sessions/:id/choices` `{ choiceId }`     | 400 for bad input, 409 if the choice isn't available |
 | POST   | `/api/sessions/:id/trial/answers`              | final quiz                                           |
-| POST   | `/api/sessions/:id/ask`                        | _optional_ AI extra, off by default, backend only    |
 
 ### Dialogue content schema (agreed shape; implement with Zod in `server/src/content/`)
 
@@ -139,10 +146,27 @@ Branches: `feat/<issue#>-short-name`; merge to `main` only through a PR with one
   brief. The team is to ask the module leader. Fallback: a real guide (e.g. Themistocles,
   Pytheas of Massalia, Herodotus), with Poseidon as an exhibit subject. Keep content and
   wording easy to swap; don't hard-code "Poseidon" outside content files.
-- Final gallery list (candidates: Temple of Sounion, Greek seafaring, Isthmian Games,
-  shipwrecks, sea creatures; plan 4 core + 1 secret).
-- Whether to build the optional AI extra at all.
-- GitHub repo owner. The folder is not yet a git repo.
+- How the room designs fit the gallery mechanics above (unlocks, favour, the trial). Each room
+  settles this in its own spec under `docs/rooms/<room>/`.
+
+## Claude Code setup
+
+- `.claude/settings.json` (shared) pre-approves `npm test` and `npm run …`, and denies reading
+  `.env` files.
+- **Never add, install, update or remove dependencies.** Installing packages (`npm install`,
+  `npx`, `yarn`, `pnpm`, `pip`, `brew`…) is blocked, and editing a `package.json` asks the user
+  first. If you think a new package is needed, stop and explain why; the user decides and
+  installs it. Use the existing `npm run` scripts instead of `npx`. Personal overrides go in
+  `.claude/settings.local.json` (git-ignored).
+- Hooks run on every Edit/Write: `.claude/hooks/protect-files.mjs` blocks hand edits to
+  `*.generated.*` files and `.env`; `.claude/hooks/format-and-lint.mjs` runs Prettier and
+  ESLint on the edited file and reports remaining errors back to you. Fix those before moving on.
+- Generated data files are named `*.generated.json`. Change the import script or its source
+  data and re-run it; never edit them by hand.
+- Room plans, specs and research live in `docs/rooms/<room>/` (each may have its own CLAUDE.md).
+  Private copies of the brief and rubric, if present, are in `docs/_private/` (git-ignored).
+- Log notable AI-assisted work in `docs/AI_USE_LOG.md`. The brief allows AI (Tier 3) but
+  requires all AI use to be acknowledged.
 
 ## Working conventions for Claude
 

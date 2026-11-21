@@ -58,20 +58,30 @@ The home page shows **"Server: online"** when the two are connected.
 
 Run these from the repo root.
 
-| Command                | What it does                                         |
-| ---------------------- | ---------------------------------------------------- |
-| `npm run dev`          | Start the API and the client with hot reload         |
-| `npm test`             | Run all server and client tests                      |
-| `npm run lint`         | Lint all code with ESLint                            |
-| `npm run typecheck`    | Type-check shared, server and client                 |
-| `npm run format`       | Format all files with Prettier                       |
-| `npm run format:check` | Check formatting without changing files (used in CI) |
-| `npm run build`        | Production build of the client into `client/dist`    |
-| `npm start`            | Start the API without hot reload                     |
+| Command                 | What it does                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------- |
+| `npm run dev`           | Start the API and the client with hot reload                                                |
+| `npm test`              | Run all server and client tests                                                             |
+| `npm run lint`          | Lint all code with ESLint                                                                   |
+| `npm run typecheck`     | Type-check shared, server and client                                                        |
+| `npm run format`        | Format all files with Prettier                                                              |
+| `npm run format:check`  | Check formatting without changing files (used in CI)                                        |
+| `npm run build`         | Production build of the client into `client/dist`                                           |
+| `npm start`             | Start the API without hot reload                                                            |
+| `npm run test:examples` | Run **all** changing-sea example conversations through the API (red until the API is built) |
+| `npm run chat`          | Chat with the running API in the terminal (start `npm run dev` first)                       |
 
 To run one workspace's tests, use `npm test -w server` or `npm test -w client`. For watch
 mode, use `npm run test:watch -w server`. For a coverage report, use
 `npm run test:coverage -w server`.
+
+`npm test` runs only the example conversations listed in `server/tests/examples/enabled.ts`, so CI
+stays green while the room is being built. `npm run test:examples` runs all of them. See
+`docs/rooms/changing-sea/examples/README.md`.
+
+`npm run chat` accepts `--seed N` (e.g. `npm run chat -- --seed 42`) and the `API_URL` env var
+(default `http://localhost:3001`). Type a number to pick a choice, any other text to ask a
+question, and `/quit` to leave.
 
 ## API
 
@@ -108,8 +118,14 @@ Every error response has the same shape:
 │   │   ├── middleware/      validation, 404 and error handling
 │   │   ├── routes/          API routes
 │   │   └── services/        session store
-│   └── tests/               api/, engine/ and content/ tests
+│   ├── scripts/             developer scripts (chat.ts: terminal chat)
+│   └── tests/               api/, engine/, content/ and examples/ tests
+│       └── examples/        runs docs/rooms/*/examples/ through the API
 ├── shared/                  TypeScript types shared by client and server
+├── docs/
+│   ├── rooms/<room>/        each room's plan, spec and research
+│   └── AI_USE_LOG.md        record of AI-assisted work (the brief requires it)
+├── .claude/                 shared Claude Code settings and hooks
 ├── .github/                 CI workflow, PR and issue templates
 ├── CLAUDE.md                project context for Claude Code
 └── README.md
@@ -124,7 +140,15 @@ Every error response has the same shape:
 5. Get one approving review from a teammate. CI must pass before merging.
 
 Write JSDoc/TSDoc comments for significant functions, components and modules. Add tests with
-every feature.
+every feature. If AI helped produce something you commit, add a row to `docs/AI_USE_LOG.md`.
+
+### Using Claude Code
+
+The repo includes shared Claude Code settings in `.claude/settings.json`. Test, lint and
+type-check commands run without prompts, and after every edit Claude Code formats and lints
+the changed file automatically (`.claude/hooks/`). Run `npm install` first so the hooks can
+find Prettier and ESLint. Put personal settings in `.claude/settings.local.json`, which is
+git-ignored.
 
 ## Team
 

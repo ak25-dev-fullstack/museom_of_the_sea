@@ -11,6 +11,12 @@ coverage
 .env.*
 !.env.example
 
+# Claude Code: personal settings stay local; the shared settings.json is committed
+.claude/settings.local.json
+
+# Private copies of the university brief and rubric (not ours to publish)
+docs/_private/
+
 # Logs
 *.log
 npm-debug.log*
@@ -23,3 +29,6 @@ npm-debug.log*
 
 # Old Vite template files (safe to delete)
 _template-backup
+
+# Python bytecode (example generator tools)
+__pycache__/

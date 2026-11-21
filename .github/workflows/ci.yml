@@ -22,6 +22,13 @@ jobs:
       - name: Check formatting
         run: npm run format:check
 
+      # Facts in the example conversations must match research/events.csv word for word.
+      # Standard-library Python only; ubuntu-latest ships with python3.
+      - name: Check example facts against events.csv
+        run: python3 docs/rooms/changing-sea/examples/tools/check_examples.py
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+
       - name: Lint
         run: npm run lint
 
