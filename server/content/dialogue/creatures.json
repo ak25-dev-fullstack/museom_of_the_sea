@@ -1,0 +1,20 @@
+{
+    "topic": "mythological-creatures",
+    "creatures": []
+}
+
+{
+    "id": "polyphemus",
+    "name": "Polyphemus",
+    "category": "giant",
+    "poseidonRelation": "Son of Poseidon and the mymph Thoosa",
+    "summary": "A one-eyed Cyclops blinded by Odysseus.",
+    "keywords": ["cyclops", "one-eyed", "odysseus", "nobody"],
+    "relatedFigures": ["odysseus", "poseidon", "thoosa"],
+    "keyMyths":[
+        "Odysseus and his men were trapped in his cave (Odyssey,book 9)."
+        "Odysseus blinded him with a heated olive stake."
+        "Odysseus told him his name was 'Nobody'."
+        "Polyphemus prayed to poseidon to make Odysseus's journey long and painful."
+    ]
+}
