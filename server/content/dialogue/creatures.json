@@ -1,7 +1,7 @@
 {
     "topic": "mythological-creatures",
-    "creatures": []
-}
+    "creatures": [
+
 
 {
     "id": "polyphemus",
@@ -12,9 +12,11 @@
     "keywords": ["cyclops", "one-eyed", "odysseus", "nobody"],
     "relatedFigures": ["odysseus", "poseidon", "thoosa"],
     "keyMyths":[
-        "Odysseus and his men were trapped in his cave (Odyssey,book 9)."
-        "Odysseus blinded him with a heated olive stake."
-        "Odysseus told him his name was 'Nobody'."
-        "Polyphemus prayed to poseidon to make Odysseus's journey long and painful."
+        "Odysseus and his men were trapped in his cave (Odyssey,book 9).",
+        "Odysseus blinded him with a heated olive stake.",
+        "Odysseus told him his name was 'Nobody'.",
+        "Polyphemus prayed to Poseidon to make Odysseus's journey long and painful."
+    ]
+}
     ]
 }
