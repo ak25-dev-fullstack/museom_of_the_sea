@@ -30,7 +30,16 @@
       "name": "Pelagios & Asphalios (Sea and Harbor Domains)",
       "categoryBitmask": 1,
       "affinity": 1,
-      "searchTokens": ["pelagios", "asphalios", "epithets", "harbors", "navigation", "sea lanes", "storms", "gales"],
+      "searchTokens": [
+        "pelagios",
+        "asphalios",
+        "epithets",
+        "harbors",
+        "navigation",
+        "sea lanes",
+        "storms",
+        "gales"
+      ],
       "scholarView": {
         "summary": "In classical Greek religion, Poseidon was invoked as Pelagios (Lord of the Open Sea) for deep-water navigation and Asphalios (Stabilizer/Securer) at harbor entrances and fault lines to calm swells and protect port foundations.",
         "habitat": "Mediterranean Sea, coastal harbors, and open shipping lanes",
@@ -46,7 +55,16 @@
       "name": "Enosichthon (Earth-Shaker & Tsunamis)",
       "categoryBitmask": 1,
       "affinity": 0,
-      "searchTokens": ["enosichthon", "gaieochos", "earth shaker", "earthquakes", "tsunamis", "trident", "seismic", "tectonic"],
+      "searchTokens": [
+        "enosichthon",
+        "gaieochos",
+        "earth shaker",
+        "earthquakes",
+        "tsunamis",
+        "trident",
+        "seismic",
+        "tectonic"
+      ],
       "scholarView": {
         "summary": "Under the titles Enosichthon (Earth-Shaker) and Gaieochos (Earth-Holder), ancient Greeks attributed earthquakes, tsunamis, and coastal landslides to strikes of Poseidon's trident against the seabed.",
         "habitat": "Submarine fault lines and Mediterranean coastal basins",
@@ -62,7 +80,16 @@
       "name": "Hippios & The Underwater Palace at Aegae",
       "categoryBitmask": 1,
       "affinity": 2,
-      "searchTokens": ["hippios", "aegae", "palace", "euboea", "horses", "chariot", "skyphios", "arion"],
+      "searchTokens": [
+        "hippios",
+        "aegae",
+        "palace",
+        "euboea",
+        "horses",
+        "chariot",
+        "skyphios",
+        "arion"
+      ],
       "scholarView": {
         "summary": "As Hippios (Lord of Horses), Poseidon was credited with creating the first horse (Skyphios or Arion) by striking rock with his trident. Homer's Iliad locates his golden underwater palace at Aegae off Euboea, where he stabled bronze-hoofed chariot horses.",
         "habitat": "Submerged depths off Euboea, Aegean Sea",
@@ -78,7 +105,15 @@
       "name": "Dolphins (Delphinus)",
       "categoryBitmask": 1,
       "affinity": 2,
-      "searchTokens": ["dolphin", "dolphins", "delphinus", "amphitrite", "constellation", "messenger", "cetacean"],
+      "searchTokens": [
+        "dolphin",
+        "dolphins",
+        "delphinus",
+        "amphitrite",
+        "constellation",
+        "messenger",
+        "cetacean"
+      ],
       "scholarView": {
         "summary": "Dolphins were revered as Poseidon's sacred messengers. In Greek myth, the dolphin Delphinus found Amphitrite near the Atlas Mountains and persuaded her to marry Poseidon, earning a place among the stars as a constellation.",
         "habitat": "Pelagic and coastal waters worldwide, including the Mediterranean",
@@ -94,7 +129,16 @@
       "name": "Horses & Hippocampi",
       "categoryBitmask": 1,
       "affinity": 2,
-      "searchTokens": ["hippocampus", "hippocampi", "horse", "horses", "sea steed", "dine", "argolis", "chariot"],
+      "searchTokens": [
+        "hippocampus",
+        "hippocampi",
+        "horse",
+        "horses",
+        "sea steed",
+        "dine",
+        "argolis",
+        "chariot"
+      ],
       "scholarView": {
         "summary": "In classical marine iconography, Hippocampi were mythical sea-steeds with equine forequarters and fish tails that pulled Poseidon's chariot. Historically, Pausanias recorded live horses sacrificed to Poseidon by drowning at Dine in Argolis.",
         "habitat": "Mythological marine domain; Argolis coastal springs (historical ritual)",
@@ -110,7 +154,15 @@
       "name": "Sacrificial Bulls & The Cretan Bull",
       "categoryBitmask": 1,
       "affinity": 1,
-      "searchTokens": ["bull", "bulls", "cretan bull", "minos", "sacrifice", "tauros", "coastal altar"],
+      "searchTokens": [
+        "bull",
+        "bulls",
+        "cretan bull",
+        "minos",
+        "sacrifice",
+        "tauros",
+        "coastal altar"
+      ],
       "scholarView": {
         "summary": "Black or heavy bulls were the primary sacrificial offering cast into the surf or slaughtered at coastal altars to appease storms, reflecting the roaring force of waves. In myth, Poseidon sent the white Cretan Bull from the sea to King Minos.",
         "habitat": "Coastal sanctuaries (Sounion, Isthmia) and Bronze Age Crete",
@@ -126,7 +178,16 @@
       "name": "Atlantic Bluefin Tuna (Tunny Fish)",
       "categoryBitmask": 1,
       "affinity": 1,
-      "searchTokens": ["tuna", "bluefin tuna", "tunny", "oppian", "halieutica", "migration", "hellespont", "cyzicus"],
+      "searchTokens": [
+        "tuna",
+        "bluefin tuna",
+        "tunny",
+        "oppian",
+        "halieutica",
+        "migration",
+        "hellespont",
+        "cyzicus"
+      ],
       "scholarView": {
         "summary": "Seasonal migrations of Atlantic bluefin tuna through the Aegean and Hellespont were vital to ancient Greek food security. As recorded in Oppian's Halieutica (2nd century CE), fishermen offered the first catch of the season at coastal shrines to Poseidon.",
         "habitat": "North Atlantic Ocean and Mediterranean Sea pelagic waters",
@@ -142,7 +203,15 @@
       "name": "Mediterranean Monk Seals & Proteus",
       "categoryBitmask": 1,
       "affinity": 1,
-      "searchTokens": ["seal", "seals", "monk seal", "proteus", "old man of the sea", "odyssey", "flocks"],
+      "searchTokens": [
+        "seal",
+        "seals",
+        "monk seal",
+        "proteus",
+        "old man of the sea",
+        "odyssey",
+        "flocks"
+      ],
       "scholarView": {
         "summary": "Mediterranean monk seals were regarded in Greek epic as the managed marine flocks of Poseidon, herded on coastal rocks and inside sea caves by Proteus, the prophetic Old Man of the Sea (Homer's Odyssey, Book 4).",
         "habitat": "Mediterranean coastal rocks, sea caves, and eastern Atlantic islands",
@@ -158,7 +227,16 @@
       "name": "Cetus (Sea Monsters) & Classical Depth Limits",
       "categoryBitmask": 5,
       "affinity": 0,
-      "searchTokens": ["cetus", "ketos", "monster", "sea monster", "aristotle", "photic zone", "troy", "andromeda"],
+      "searchTokens": [
+        "cetus",
+        "ketos",
+        "monster",
+        "sea monster",
+        "aristotle",
+        "photic zone",
+        "troy",
+        "andromeda"
+      ],
       "scholarView": {
         "summary": "Ancient naturalists like Aristotle (Historia Animalium) and Oppian accurately cataloged sunlit coastal species, but lacked technology to explore below the photic zone. Unknown deep-water whales, giant squid, and monsters sent to punish Troy and Aethiopia were categorized as Cetus (Ketos).",
         "habitat": "Sub-photic deep pelagic waters (mythological and classical concept)",
@@ -174,7 +252,16 @@
       "name": "Temple of Poseidon at Cape Sounion",
       "categoryBitmask": 1,
       "affinity": 2,
-      "searchTokens": ["sounion", "cape sounion", "attica", "temple", "salamis", "trireme", "columns", "pericles"],
+      "searchTokens": [
+        "sounion",
+        "cape sounion",
+        "attica",
+        "temple",
+        "salamis",
+        "trireme",
+        "columns",
+        "pericles"
+      ],
       "scholarView": {
         "summary": "Built 444-440 BCE in Agrileza marble on a 60-to-70-meter cliff at the southern tip of Attica, replacing an Archaic temple burned by Persia in 480 BCE. Fifteen of its 34 Doric columns still stand; excavations revealed a bull-sacrifice ramp and a captured Persian trireme trophy from Salamis.",
         "habitat": "Cape Sounion, southern Attica, Greece (Aegean Sea)",
@@ -190,11 +277,23 @@
       "name": "Sanctuaries at Isthmia & Samikon (2025 Excavations)",
       "categoryBitmask": 1,
       "affinity": 1,
-      "searchTokens": ["isthmia", "samikon", "isthmian games", "diolkos", "corinth", "elis", "excavation", "2025"],
+      "searchTokens": [
+        "isthmia",
+        "samikon",
+        "isthmian games",
+        "diolkos",
+        "corinth",
+        "elis",
+        "excavation",
+        "2025"
+      ],
       "scholarView": {
         "summary": "Isthmia sat on the Corinthian Isthmus beside the Diolkos overland ship trackway and hosted the biennial Isthmian Games. At Samikon in Elis, 2025 excavations by the Austrian Archaeological Institute mapped a 6th-century BCE temple with two columns in antis and a double-faced lagoon protection wall.",
         "habitat": "Isthmus of Corinth and coastal Elis, Peloponnese, Greece",
-        "citations": ["Strabo, Geographica", "Austrian Archaeological Institute (OeAW-OeAI) 2025 Field Report"]
+        "citations": [
+          "Strabo, Geographica",
+          "Austrian Archaeological Institute (OeAW-OeAI) 2025 Field Report"
+        ]
       },
       "divineView": {
         "favoredTone": "At Isthmia, sailors dragged whole galleys across stone rather than brave my gales, and athletes competed for my pine wreath. Even at Samikon, your diggers still uncover the walls built to hold back my lagoons.",
@@ -206,7 +305,16 @@
       "name": "Tinos Healing Sanctuary & Southern Capes (Malea & Taenarum)",
       "categoryBitmask": 1,
       "affinity": 0,
-      "searchTokens": ["tinos", "malea", "cape malea", "taenarum", "cape taenarum", "libations", "ophthalmoi", "healing"],
+      "searchTokens": [
+        "tinos",
+        "malea",
+        "cape malea",
+        "taenarum",
+        "cape taenarum",
+        "libations",
+        "ophthalmoi",
+        "healing"
+      ],
       "scholarView": {
         "summary": "Tinos housed the only Cycladic sanctuary jointly dedicated to Poseidon and Amphitrite as healing deities during the Posidonia festival. Conversely, Capes Malea and Taenarum were feared navigational hazards where captains poured wine libations and painted apotropaic eyes (ophthalmoi) on ship prows.",
         "habitat": "Tinos (Cyclades) and southern Peloponnese headlands, Greece",
@@ -222,11 +330,23 @@
       "name": "Poseidon's Squid (Mobydickia poseidonii)",
       "categoryBitmask": 6,
       "affinity": 2,
-      "searchTokens": ["mobydickia", "poseidonii", "poseidon squid", "squid", "oegopsida", "sperm whale", "worms 2025", "trident hooks"],
+      "searchTokens": [
+        "mobydickia",
+        "poseidonii",
+        "poseidon squid",
+        "squid",
+        "oegopsida",
+        "sperm whale",
+        "worms 2025",
+        "trident hooks"
+      ],
       "scholarView": {
         "summary": "Named in the WoRMS Top Ten Marine Species of 2025 (published March 2026), Mobydickia poseidonii represents a new deep-sea squid family (Mobydickidae). Identified from a 1955-1956 Antarctic sperm whale stomach specimen, it lacks bioluminescent photophores and features trident-shaped tentacular hooks.",
         "habitat": "Deep bathypelagic waters, Southern Ocean",
-        "citations": ["WoRMS Top Ten Marine Species of 2025 (March 2026)", "Arnold & Fernandez-Alvarez (2025)"]
+        "citations": [
+          "WoRMS Top Ten Marine Species of 2025 (March 2026)",
+          "Arnold & Fernandez-Alvarez (2025)"
+        ]
       },
       "divineView": {
         "favoredTone": "A pale hunter of the lightless deep, armed with hooks shaped like my own trident! It took your scientists until 2025 to name what my sperm whales have hunted in the dark for ages.",
@@ -238,7 +358,15 @@
       "name": "Ghost Shark Chimaera (Chimaera sp. 1)",
       "categoryBitmask": 6,
       "affinity": 1,
-      "searchTokens": ["ghost shark", "chimaera", "coral sea", "cartilaginous", "ocean census", "australia", "ancient lineage"],
+      "searchTokens": [
+        "ghost shark",
+        "chimaera",
+        "coral sea",
+        "cartilaginous",
+        "ocean census",
+        "australia",
+        "ancient lineage"
+      ],
       "scholarView": {
         "summary": "Discovered by CSIRO ichthyologist Dr. William White at 802 to 838 meters depth in Australia's Coral Sea Marine Park during the 2025-2026 Ocean Census. Chimaeras belong to a cartilaginous lineage that split from sharks and rays nearly 400 million years ago, predating dinosaurs.",
         "habitat": "Deep continental slopes (802-838 m), Coral Sea Marine Park, Australia",
@@ -254,7 +382,15 @@
       "name": "Glass Castle Symbiotic Worm (Dalhousiella yabukii)",
       "categoryBitmask": 6,
       "affinity": 1,
-      "searchTokens": ["glass castle worm", "dalhousiella yabukii", "glass sponge", "hexactinellida", "shichiyo seamount", "japan", "symbiosis"],
+      "searchTokens": [
+        "glass castle worm",
+        "dalhousiella yabukii",
+        "glass sponge",
+        "hexactinellida",
+        "shichiyo seamount",
+        "japan",
+        "symbiosis"
+      ],
       "scholarView": {
         "summary": "Described by Dr. Naoto Jimi at 791 meters depth on Japan's Shichiyo Seamount Chain during the 2025-2026 Ocean Census. This polychaete worm lives as an obligate endosymbiont inside the silica lattice of deep-sea glass sponges (Hexactinellida).",
         "habitat": "Deep-sea glass sponge reefs (791 m), Shichiyo Seamount Chain, Japan",
@@ -270,7 +406,15 @@
       "name": "Mediterranean Sea Cave Shrimp (Caridion sp. 1)",
       "categoryBitmask": 2,
       "affinity": 2,
-      "searchTokens": ["cave shrimp", "caridion", "marseille", "mediterranean", "sea cave", "ocean census", "orange banding"],
+      "searchTokens": [
+        "cave shrimp",
+        "caridion",
+        "marseille",
+        "mediterranean",
+        "sea cave",
+        "ocean census",
+        "orange banding"
+      ],
       "scholarView": {
         "summary": "Identified by Dr. Hossein Ashrafi at 15 to 35 meters depth inside a dark marine cave off Marseille, France (2025-2026 Ocean Census). Featuring vivid orange banding, its discovery proves novel macro-species remain hidden within the heavily studied Mediterranean Sea.",
         "habitat": "Dark sublittoral marine caves (15-35 m), Marseille, Mediterranean Sea",
@@ -286,11 +430,22 @@
       "name": "Aposematic Ribbon Worm & Carnivorous Death Ball Sponge",
       "categoryBitmask": 6,
       "affinity": 0,
-      "searchTokens": ["ribbon worm", "drepanophoridae", "death ball sponge", "chondrocladia", "carnivorous sponge", "timor leste", "rov subastian"],
+      "searchTokens": [
+        "ribbon worm",
+        "drepanophoridae",
+        "death ball sponge",
+        "chondrocladia",
+        "carnivorous sponge",
+        "timor leste",
+        "rov subastian"
+      ],
       "scholarView": {
         "summary": "Documented in the May 2026 Ocean Census report: Drepanophoridae sp. 1 (a toxic, brightly colored ribbon worm under 3 cm found off Timor-Leste at 1-5 m) and Chondrocladia sp. (a deep-sea predatory sponge filmed by ROV SuBastian that traps crustaceans with microscopic hooks).",
         "habitat": "Shallow reefs of Timor-Leste (1-5 m) and abyssal benthic basins",
-        "citations": ["Nippon Foundation-Nekton Ocean Census Report (May 2026)", "Schmidt Ocean Institute"]
+        "citations": [
+          "Nippon Foundation-Nekton Ocean Census Report (May 2026)",
+          "Schmidt Ocean Institute"
+        ]
       },
       "divineView": {
         "favoredTone": "In my realm, even a sponge rooted to the abyssal mud becomes a hunter armed with microscopic hooks, while a tiny ribbon worm wears bright colors to warn predators of its venom.",
@@ -302,7 +457,14 @@
       "name": "Atlantic Manta Ray (Mobula yarae)",
       "categoryBitmask": 2,
       "affinity": 2,
-      "searchTokens": ["manta ray", "mobula yarae", "atlantic manta", "worms 2025", "third species", "ray"],
+      "searchTokens": [
+        "manta ray",
+        "mobula yarae",
+        "atlantic manta",
+        "worms 2025",
+        "third species",
+        "ray"
+      ],
       "scholarView": {
         "summary": "Formally confirmed in 2025 and listed in the WoRMS Top Ten Marine Species of 2025 (March 2026) as a distinct third species of manta ray endemic to the Atlantic Ocean, resolving 15 years of genetic and morphological debate.",
         "habitat": "Tropical and subtropical pelagic waters of the Atlantic Ocean",
@@ -318,7 +480,15 @@
       "name": "Darth Vader Supergiant Isopod (Bathynomus vaderi)",
       "categoryBitmask": 6,
       "affinity": 0,
-      "searchTokens": ["bathynomus vaderi", "supergiant isopod", "isopod", "darth vader", "vietnam", "scavenger", "worms 2025"],
+      "searchTokens": [
+        "bathynomus vaderi",
+        "supergiant isopod",
+        "isopod",
+        "darth vader",
+        "vietnam",
+        "scavenger",
+        "worms 2025"
+      ],
       "scholarView": {
         "summary": "Described in 2025 by Ng, Sidabalok, and Nguyen from deep benthic waters off Vietnam and named to the WoRMS Top Ten of 2025. Exceeding 30 cm in length, this giant crustacean scavenges on the deep seabed and was named for its helmet-like head shield.",
         "habitat": "Deep benthic seafloor off Vietnam, South China Sea",
@@ -334,7 +504,14 @@
       "name": "Golden Glow Zoantharian (Corallizoanthus aureus)",
       "categoryBitmask": 6,
       "affinity": 1,
-      "searchTokens": ["corallizoanthus aureus", "golden glow", "zoantharian", "precious coral", "deep coral", "worms 2025"],
+      "searchTokens": [
+        "corallizoanthus aureus",
+        "golden glow",
+        "zoantharian",
+        "precious coral",
+        "deep coral",
+        "worms 2025"
+      ],
       "scholarView": {
         "summary": "An epibiotic colonial anthozoan described in 2025 (WoRMS Top Ten of 2025) that lives in lightless benthic depths upon deep-sea precious corals, displaying a striking golden tissue coloration under underwater imaging.",
         "habitat": "Lightless deep-sea precious coral beds",
@@ -350,7 +527,15 @@
       "name": "Iskra's Glitter Worm (Photinopolynoe iskrae)",
       "categoryBitmask": 6,
       "affinity": 1,
-      "searchTokens": ["photinopolynoe iskrae", "glitter worm", "scaleworm", "hydrothermal vent", "cold seep", "iridescent", "worms 2025"],
+      "searchTokens": [
+        "photinopolynoe iskrae",
+        "glitter worm",
+        "scaleworm",
+        "hydrothermal vent",
+        "cold seep",
+        "iridescent",
+        "worms 2025"
+      ],
       "scholarView": {
         "summary": "A deep-sea scaleworm described in 2025 (WoRMS Top Ten of 2025) featuring iridescent dorsal scales (elytra). It thrives across multiple chemosynthetic habitats, inhabiting both high-temperature hydrothermal vents and methane cold seeps.",
         "habitat": "Hydrothermal vents and methane cold seeps",
@@ -366,7 +551,14 @@
       "name": "Elven Abyss Tunicate (Kaikoja undume)",
       "categoryBitmask": 6,
       "affinity": 0,
-      "searchTokens": ["kaikoja undume", "elven abyss tunicate", "tunicate", "predatory tunicate", "abyssal", "worms 2025"],
+      "searchTokens": [
+        "kaikoja undume",
+        "elven abyss tunicate",
+        "tunicate",
+        "predatory tunicate",
+        "abyssal",
+        "worms 2025"
+      ],
       "scholarView": {
         "summary": "A specialized deep-sea predatory tunicate described in 2025 (WoRMS Top Ten of 2025). Unlike shallow filter-feeding sea squirts, Kaikoja undume uses an expanded muscular oral siphon in abyssal currents to actively trap drifting copepods and small invertebrates.",
         "habitat": "Abyssal benthic currents",
@@ -382,7 +574,14 @@
       "name": "Good Luck Flatworm (Acanthobothrium goleketen)",
       "categoryBitmask": 10,
       "affinity": -1,
-      "searchTokens": ["acanthobothrium goleketen", "good luck flatworm", "tapeworm", "brazilian guitarfish", "coextinction", "worms 2025"],
+      "searchTokens": [
+        "acanthobothrium goleketen",
+        "good luck flatworm",
+        "tapeworm",
+        "brazilian guitarfish",
+        "coextinction",
+        "worms 2025"
+      ],
       "scholarView": {
         "summary": "A parasitic tapeworm described in 2025 (WoRMS Top Ten of 2025) found exclusively inside the critically endangered Brazilian guitarfish (Pseudobatos horkelii), illustrating how host extinction triggers co-extinction of specialized dependent species.",
         "habitat": "Endoparasitic within Brazilian guitarfish, southwestern Atlantic",
@@ -398,7 +597,16 @@
       "name": "Unmapped Seafloor (72.7%) & Vertical Ocean Zones",
       "categoryBitmask": 4,
       "affinity": 1,
-      "searchTokens": ["unmapped seafloor", "bathypelagic", "abyssal", "hadal", "mariana trench", "sonar", "depth zones", "27.3%"],
+      "searchTokens": [
+        "unmapped seafloor",
+        "bathypelagic",
+        "abyssal",
+        "hadal",
+        "mariana trench",
+        "sonar",
+        "depth zones",
+        "27.3%"
+      ],
       "scholarView": {
         "summary": "According to the June 2026 UN Third World Ocean Assessment (WOA III), only 27.3% of Earth's seafloor was mapped to modern high-resolution standards by late 2025, leaving 72.7% unmapped across the bathypelagic (1,000-4,000 m), abyssal (4,000-6,000 m), and hadal (6,000-11,000 m) zones.",
         "habitat": "Global deep ocean basins and subduction trenches",
@@ -414,7 +622,16 @@
       "name": "Polymetallic Nodule Micro-Habitats (Clarion-Clipperton Zone)",
       "categoryBitmask": 12,
       "affinity": -2,
-      "searchTokens": ["polymetallic nodules", "clarion clipperton", "ccz", "seabed mining", "marum", "nioz", "thurammina", "meiofauna"],
+      "searchTokens": [
+        "polymetallic nodules",
+        "clarion clipperton",
+        "ccz",
+        "seabed mining",
+        "marum",
+        "nioz",
+        "thurammina",
+        "meiofauna"
+      ],
       "scholarView": {
         "summary": "In November 2026, MARUM, GEOMAR, and NIOZ researchers dissecting 244 polymetallic nodules from 4,000+ meters in the Pacific Clarion-Clipperton Zone found 4,139 microscopic animals (up to 245 in a single nodule) living inside internal crevices. Nodules grow only millimeters per million years, making deep-sea mining irreversible.",
         "habitat": "Clarion-Clipperton Fracture Zone (3,500-6,000 m), central Pacific Ocean",
@@ -430,7 +647,15 @@
       "name": "Active & Inactive Hydrothermal Vents",
       "categoryBitmask": 4,
       "affinity": 0,
-      "searchTokens": ["hydrothermal vents", "chemosynthesis", "inactive vents", "dracograllus miguelitus", "dragon nematode", "tube worms", "hephaestus"],
+      "searchTokens": [
+        "hydrothermal vents",
+        "chemosynthesis",
+        "inactive vents",
+        "dracograllus miguelitus",
+        "dragon nematode",
+        "tube worms",
+        "hephaestus"
+      ],
       "scholarView": {
         "summary": "Active hydrothermal vents along mid-ocean ridges (2,000+ m depth) emit mineral-rich fluids over 300°C, sustaining chemosynthetic bacteria and giant tube worms without sunlight. Recent 2025 taxonomy (such as the Dragon Nematode, Dracograllus miguelitus) proved cooled, inactive sulfide chimneys also harbor unique endemic species.",
         "habitat": "Mid-ocean ridge systems (2,000+ meters depth)",
@@ -446,7 +671,14 @@
       "name": "Seamounts & Deep-Sea Glass Sponge Reefs",
       "categoryBitmask": 4,
       "affinity": 1,
-      "searchTokens": ["seamounts", "glass sponges", "hexactinellida", "eunice siphoninsidiator", "sponge ambusher worm", "nodule crown coral"],
+      "searchTokens": [
+        "seamounts",
+        "glass sponges",
+        "hexactinellida",
+        "eunice siphoninsidiator",
+        "sponge ambusher worm",
+        "nodule crown coral"
+      ],
       "scholarView": {
         "summary": "Submerged volcanic seamounts generate nutrient-rich upwelling currents that support ancient hexactinellid glass sponge reefs and specialized commensal species described in 2025, including the Sponge Ambusher Worm (Eunice siphoninsidiator) and Nodule Crown Coral (Deltocyathus zoemetallicus).",
         "habitat": "Submerged volcanic seamounts and abyssal hardgrounds",
@@ -462,7 +694,15 @@
       "name": "Ocean Warming & Accelerated Sea-Level Rise (WOA III 2026)",
       "categoryBitmask": 8,
       "affinity": -2,
-      "searchTokens": ["ocean warming", "sea level rise", "ocean heat", "woa iii", "coral bleaching", "4.3 mm", "climate"],
+      "searchTokens": [
+        "ocean warming",
+        "sea level rise",
+        "ocean heat",
+        "woa iii",
+        "coral bleaching",
+        "4.3 mm",
+        "climate"
+      ],
       "scholarView": {
         "summary": "Published June 10, 2026, the UN Third World Ocean Assessment (WOA III) reported that ~16% of total ocean heat gain since 1955 occurred post-2018, while global mean sea-level rise more than doubled from under 2.0 mm/year pre-2015 to 4.3 mm/year by 2023, driving mass coral bleaching.",
         "habitat": "Global ocean basins, especially Atlantic, Southern Indian, and Southern Pacific",
@@ -478,7 +718,16 @@
       "name": "Marine Plastic Pollution & Elasmobranch Extinction Risk",
       "categoryBitmask": 8,
       "affinity": -2,
-      "searchTokens": ["plastic", "microplastics", "pollution", "52.1 million tonnes", "sharks", "rays", "extinction", "overfishing"],
+      "searchTokens": [
+        "plastic",
+        "microplastics",
+        "pollution",
+        "52.1 million tonnes",
+        "sharks",
+        "rays",
+        "extinction",
+        "overfishing"
+      ],
       "scholarView": {
         "summary": "WOA III (June 2026) documented 52.1 million tonnes of plastic entering the ocean annually, creating ~24.4 trillion surface microplastic particles and harming over 4,000 marine species. Meanwhile, roughly one-third of all known sharks, rays, and chimaeras face extinction from overfishing and bycatch.",
         "habitat": "Global surface gyres, coastal shelves, and deep benthic trenches",
@@ -494,11 +743,24 @@
       "name": "Underwater Noise, Mediterranean Ship Strikes & The Whale Pump",
       "categoryBitmask": 8,
       "affinity": -2,
-      "searchTokens": ["underwater noise", "ship strikes", "whales", "fin whale", "sperm whale", "mediterranean", "pssa", "whale pump", "imo"],
+      "searchTokens": [
+        "underwater noise",
+        "ship strikes",
+        "whales",
+        "fin whale",
+        "sperm whale",
+        "mediterranean",
+        "pssa",
+        "whale pump",
+        "imo"
+      ],
       "scholarView": {
         "summary": "Commercial shipping generates continuous low-frequency noise that masks whale communication. November 2026 AIS tracking analyses of the Northwestern Mediterranean PSSA showed merchant ships exceeded 10 knots for over 80% of their distance (and ferries for 90.4%), endangering Mediterranean fin and sperm whales that drive the carbon-sequestering whale pump.",
         "habitat": "Northwestern Mediterranean (Pelagos Sanctuary) and global shipping lanes",
-        "citations": ["OceanCare & Mediterranean Conservation Reports (November 2026)", "IMO MEPC 80 Guidelines"]
+        "citations": [
+          "OceanCare & Mediterranean Conservation Reports (November 2026)",
+          "IMO MEPC 80 Guidelines"
+        ]
       },
       "divineView": {
         "favoredTone": "My great whales dive two thousand meters into the dark and carry life-giving nutrients back to the sunlit surface to feed the entire sea.",
@@ -510,7 +772,16 @@
       "name": "UN High Seas Treaty (BBNJ Agreement, January 2026) & 30x30",
       "categoryBitmask": 8,
       "affinity": 1,
-      "searchTokens": ["high seas treaty", "bbnj", "january 17 2026", "30x30", "marine protected areas", "mpa", "governance", "treaty"],
+      "searchTokens": [
+        "high seas treaty",
+        "bbnj",
+        "january 17 2026",
+        "30x30",
+        "marine protected areas",
+        "mpa",
+        "governance",
+        "treaty"
+      ],
       "scholarView": {
         "summary": "On January 17, 2026, the UN BBNJ Agreement (High Seas Treaty) entered into legal force after surpassing 80 ratifications, establishing binding rules for Marine Protected Areas, Marine Genetic Resources, and Environmental Impact Assessments across two-thirds of the ocean to support the 30x30 target.",
         "habitat": "Areas Beyond National Jurisdiction (High Seas and international seabed)",
