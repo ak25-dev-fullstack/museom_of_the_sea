@@ -1,24 +1,18 @@
-/*
- * Base styles and design tokens. The full design system is issue #13;
- * these are placeholders to build on.
- */
 :root {
-  --color-bg: #f4f7f9;
-  --color-surface: #ffffff;
-  --color-text: #12232e;
-  --color-muted: #4b6070;
-  --color-accent: #0b6e8a;
-  --color-ok: #1f7a4d;
-  --color-error: #b3261e;
+  color-scheme: dark;
 
-  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --radius: 8px;
-
-  color-scheme: light dark;
+  /* Core colour */
+  --bg-abyss: #040b14;
+  --surface-dock: rgba(11, 29, 53, 0.92);
+  --bubble-user-start: #0369a1;
+  --bubble-user-end : #075985;
+  --gold-light: #fbbf24;
+  --gold-base: #f59e0b;
+  --gold-dark: #d97706;
+  --focus-cyan: #7dd3fc;
+  --focus-flow: rgba(56, 189, 248, 0.4);
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
