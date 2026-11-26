@@ -1,35 +1,33 @@
-/*
- * Base styles and design tokens. The full design system is issue #13;
- * these are placeholders to build on.
- */
 :root {
-  --color-bg: #f4f7f9;
-  --color-surface: #ffffff;
-  --color-text: #12232e;
-  --color-muted: #4b6070;
-  --color-accent: #0b6e8a;
-  --color-ok: #1f7a4d;
-  --color-error: #b3261e;
+  color-scheme: dark;
 
+  /* Core colour */
+  --bg-abyss: #040b14;
+  --surface-dock: rgba(11, 29, 53, 0.92);
+  --bubble-user-start: #0369a1;
+  --bubble-user-end: #075985;
+  --gold-light: #fbbf24;
+  --gold-base: #f59e0b;
+  --gold-dark: #d97706;
+  --focus-cyan: #7dd3fc;
+  --focus-flow: rgba(56, 189, 248, 0.4);
+
+  /* Semantic tokens */
+  --color-bg: var(--bg-abyss);
+  --color-surface: #0b1d35;
+  --color-text: #e6eef2;
+  --color-muted: #9fb3bf;
+  --color-accent: var(--focus-cyan);
+  --color-ok: #6fd39e;
+  --color-error: #ff8a80;
+
+  /* Typography, spacing and shape */
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
-  --radius: 8px;
-
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0c1820;
-    --color-surface: #13242f;
-    --color-text: #e6eef2;
-    --color-muted: #9fb3bf;
-    --color-accent: #5cc3e0;
-    --color-ok: #6fd39e;
-    --color-error: #ff8a80;
-  }
+  --radius: 8rem;
+  --radius-pill: 9999px;
 }
 
 *,
@@ -40,11 +38,20 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: var(--color-bg);
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.12), transparent 45%)
+    radial-gradient(circle at 80% 80%, rgba(3, 105, 248, 0.16), transparent 50%);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.5;
+}
+
+/* Prevent iOS safari auto-zoom on from fields */
+input,
+textarea {
+  font-family: inherit;
+  font-size: max(1rem, 16px);
 }
 
 .shell {
