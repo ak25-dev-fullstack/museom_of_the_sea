@@ -11,6 +11,16 @@
   --gold-dark: #d97706;
   --focus-cyan: #7dd3fc;
   --focus-flow: rgba(56, 189, 248, 0.4);
+
+
+  /* Semantic tokens */
+  --color-bg: var(--bg-abyss);
+  --color-surface: #0b1d35;
+  --color-text: #e6eef2;
+  --color-muted: #9fb3bf;
+  --color-accent: var(--focus-cyan);
+  --color-ok: #6fd39e; 
+  --color-error: #ff8a80; 
 }
 
 
