@@ -21,19 +21,14 @@
   --color-accent: var(--focus-cyan);
   --color-ok: #6fd39e; 
   --color-error: #ff8a80; 
-}
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0c1820;
-    --color-surface: #13242f;
-    --color-text: #e6eef2;
-    --color-muted: #9fb3bf;
-    --color-accent: #5cc3e0;
-    --color-ok: #6fd39e;
-    --color-error: #ff8a80;
-  }
+  /* Typography, spacing and shape */
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --radius: 8rem;
+  --radius-pill: 9999px;
 }
 
 *,
