@@ -71,3 +71,32 @@ textarea {
 .status[data-status='offline'] {
   color: var(--color-error);
 }
+
+.ocean-bg {
+  position: relative;
+  min-height: 100dvh;
+  background-color: var(--bg-abyss);
+  overflow: hidden;
+}
+
+.ocean-glow {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(56, 189, 248, 0.14), transparent 45%),
+    radial-gradient(circle at 75% 20%, rgba(3, 105, 161, 0.18), transparent 50%);
+  animation: drift 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes drfit {
+  from {
+    transform: translate(-2%, -1%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocen-glow {
+    animation: none;
+  }
+}
