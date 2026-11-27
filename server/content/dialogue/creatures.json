@@ -1,22 +1,79 @@
 {
     "topic": "mythological-creatures",
     "creatures": [
-
-
-{
-    "id": "polyphemus",
-    "name": "Polyphemus",
-    "category": "giant",
-    "poseidonRelation": "Son of Poseidon and the mymph Thoosa",
-    "summary": "A one-eyed Cyclops blinded by Odysseus.",
-    "keywords": ["cyclops", "one-eyed", "odysseus", "nobody"],
-    "relatedFigures": ["odysseus", "poseidon", "thoosa"],
-    "keyMyths":[
-        "Odysseus and his men were trapped in his cave (Odyssey,book 9).",
-        "Odysseus blinded him with a heated olive stake.",
-        "Odysseus told him his name was 'Nobody'.",
-        "Polyphemus prayed to Poseidon to make Odysseus's journey long and painful."
+        {
+            "id": "polyphemus",
+            "name": "Polyphemus",
+            "category": "giant",
+            "poseidonRelation": "Son of Poseidon and the nymph Thoosa",
+            "summary": "A one-eyed Cyclops blinded by Odysseus.",
+            "keywords": ["cyclops", "one-eyed", "odysseus", "nobody"],
+            "relatedFigures": ["odysseus", "poseidon", "thoosa"],
+            "keyMyths": [
+                "Odysseus and his men were trapped in his cave (Odyssey, book 9).",
+                "Odysseus blinded him with a heated olive stake.",
+                "Odysseus told him his name was 'Nobody'.",
+                "Polyphemus prayed to Poseidon to make Odysseus's journey long and painful."
+            ],
+            "learning": {
+                "facts": [
+                    "Polyphemus is a Cyclops, the son of Poseidon and the nymph Thoosa.",
+                    "In the Odyssey he traps Odysseus and his men in his cave and eats several of them.",
+                    "Odysseus blinds him with a sharpened stake and calls himself 'Nobody'.",
+                    "Polyphemus prays to Poseidon to prevent Odysseus reaching home."
+                ],
+                "sources": [
+                    { "title": "Homer, Odyssey", "ref": "Book 1 (parentage) and Book 9 (the cave)" }
+                ]
+            },
+            "immersion": {
+                "lines": [
+                    "My son. A brute, but mine. Do not speak of his blinding lightly, you mortal.",
+                    "He prayed and I answered. Odysseus learned what it costs to mock my blood.",
+                    "Nobody? A clever trick indeed. Cleverness is not the same thing as safety on my sea."
+                ],
+                "angerSensitivity": "high"
+            }
+        },
+        {
+            "id": "pegasus",
+            "name": "Pegasus",
+            "category": "hybrid",
+            "poseidonRelation": "Son of Poseidon and the Gorgon Medusa",
+            "summary": "A winged horse born from Medusa when Perseus beheaded her.",
+            "keywords": ["winged horse", "medusa", "perseus", "pegasus", "flying horse", "bellerophon", "chimera", "hippocrene"],
+            "relatedFigures": ["poseidon", "medusa", "perseus", "bellerophon", "athena", "zeus", "chrysaor"],
+            "keyMyths": [
+                "Pegasus and his brother Chrysaor sprang from Medusa when Perseus cut off her head.",
+                "He is said to be named after the springs (pegai) near where he was born.",
+                "Bellerophon tamed him with a golden bridle from Athena.",
+                "Bellerophon and Pegasus killed the Chimera.",
+                "When Bellerophon tried to fly to Olympus, Pegasus threw him off.",
+                "Pegasus then served Zeus and carried his thunderbolts.",
+                "His hoof striking Mount Helicon created the Hippocrene spring, sacred to the Muses."
+            ],
+            "learning": {
+                "facts": [
+                    "In Hesiod's Theogony, Pegasus is the offspring of Poseidon and Medusa.",
+                    "He and Chrysaor emerged when Perseus beheaded Medusa.",
+                    "Athena's golden bridle let Bellerophon tame him (Pindar).",
+                    "Sources differ on details, such as how Poseidon and Medusa came together."
+                ],
+                "sources": [
+                    { "title": "Hesiod, Theogony", "ref": "around lines 274-286" },
+                    { "title": "Pindar, Olympian Odes 13", "ref": "the golden bridle" },
+                    { "title": "Ovid, Metamorphoses", "ref": "Book 5 (Hippocrene) and Book 4 (Medusa)" }
+                ]
+            },
+            "immersion": {
+                "lines": [
+                    "Born of my blood and the Gorgon's. Even I could not hold him to the earth.",
+                    "A horse of the sea made flesh, and he chose the sky. I forgive him.",
+                    "Do not ask me about the Gorgon. Ask about the horse."
+                ],
+                "angerSensitivity": "low"
+            }
+        }
     ]
 }
-    ]
-}
+
